@@ -84,4 +84,23 @@ public class UserServiceImpl implements UserService {
                 user.getLastSeen()
         )).collect(Collectors.toList());
     }
+
+    @Override
+    public UserDTO getUserById(Long id) {
+        Optional<User> userOptional = userRepo.findById(id);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            return new UserDTO(
+                    user.getId(),
+                    user.getUsername(),
+                    user.getEmail(),
+                    null,
+                    user.getProfilePictureUrl(),
+                    user.isOnlineStatus(),
+                    user.getAbout(),
+                    user.getLastSeen()
+            );
+        }
+        return null;
+    }
 }

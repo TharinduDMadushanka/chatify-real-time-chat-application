@@ -45,4 +45,15 @@ public class UserController {
         List<UserDTO> users = userService.getAllUsers();
         return ResponseEntity.ok(users);
     }
+
+    @GetMapping("/{id}")
+    @Operation(summary = "Get user by ID", description = "Retrieves a user by their ID")
+    public ResponseEntity<UserDTO> getUserById(@PathVariable("id") Long id) {
+        UserDTO user = userService.getUserById(id);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        }else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
