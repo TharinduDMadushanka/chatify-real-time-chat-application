@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,18 +17,15 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
-
 
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         User user = new User();
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
-
-        // 🔹 Encrypt the password before saving it
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword())); // Hash the password
         user.setProfilePictureUrl(userDTO.getProfilePictureUrl());
         user.setOnlineStatus(userDTO.isOnlineStatus());
         user.setAbout(userDTO.getAbout());
@@ -49,4 +47,24 @@ public class UserServiceImpl implements UserService {
         );
     }
 
+    @Override
+    public UserDTO loginUser(String email, String password) {
+        Optional<User> userOptional = userRepo.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            if (passwordEncoder.matches(password, user.getPassword())) {
+                return new UserDTO(
+                        user.getId(),
+                        user.getUsername(),
+                        user.getEmail(),
+                        null, // Never expose passwords in responses
+                        user.getProfilePictureUrl(),
+                        user.isOnlineStatus(),
+                        user.getAbout(),
+                        user.getLastSeen()
+                );
+            }
+        }
+        return null; // Login failed
+    }
 }
