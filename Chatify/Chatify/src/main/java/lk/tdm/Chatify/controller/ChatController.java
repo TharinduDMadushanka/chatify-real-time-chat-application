@@ -1,34 +1,29 @@
 package lk.tdm.Chatify.controller;
 
 import lk.tdm.Chatify.dto.MessageDTO;
-import lk.tdm.Chatify.service.ChatService;
+import lk.tdm.Chatify.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@Controller
-@CrossOrigin
-@RequestMapping("api/v1/chat")
+@RestController
 public class ChatController {
 
     @Autowired
-    private ChatService chatService;
+    private MessageService messageService;
 
-    @MessageMapping("/sendMessage")
+    @MessageMapping("/chat.sendMessage")
     public void sendMessage(@Payload MessageDTO messageDTO) {
-        chatService.sendMessage(messageDTO);
+        messageService.saveMessage(messageDTO);
     }
 
-    @GetMapping("/history")
-    public List<MessageDTO> getChatHistory(@RequestParam Long senderId, @RequestParam Long receiverId) {
-        return chatService.getChatHistory(senderId, receiverId);
+    @GetMapping("/chat/history")
+    public Page<MessageDTO> getChatHistory(@RequestParam Long senderId, @RequestParam Long receiverId, Pageable pageable) {
+        return messageService.getChatHistory(senderId, receiverId, pageable);
     }
 }

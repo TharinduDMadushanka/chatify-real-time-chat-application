@@ -9,6 +9,8 @@ public class MessageDTO {
     private String content;
     private LocalDateTime timestamp;
 
+    // Constructors, Getters, and Setters
+
     public MessageDTO() {
     }
 
