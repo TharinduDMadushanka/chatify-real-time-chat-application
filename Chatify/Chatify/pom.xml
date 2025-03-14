@@ -68,6 +68,10 @@
 			<version>6.1.2</version> <!-- Change to the latest version -->
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
 
 	</dependencies>
 
