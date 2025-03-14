@@ -62,6 +62,13 @@
 			<version>2.6.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>6.1.2</version> <!-- Change to the latest version -->
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

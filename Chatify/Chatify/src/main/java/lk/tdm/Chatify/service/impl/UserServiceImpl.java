@@ -5,6 +5,7 @@ import lk.tdm.Chatify.entity.User;
 import lk.tdm.Chatify.repo.UserRepo;
 import lk.tdm.Chatify.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,12 +16,18 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
 
+    private BCryptPasswordEncoder passwordEncoder;
+
+
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         User user = new User();
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
-        user.setPassword(userDTO.getPassword()); // Directly saving password (not encrypted)
+
+        // 🔹 Encrypt the password before saving it
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+
         user.setProfilePictureUrl(userDTO.getProfilePictureUrl());
         user.setOnlineStatus(userDTO.isOnlineStatus());
         user.setAbout(userDTO.getAbout());
@@ -41,4 +48,5 @@ public class UserServiceImpl implements UserService {
                 savedUser.getLastSeen()
         );
     }
+
 }
