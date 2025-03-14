@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("api/v1/user")
@@ -35,5 +37,12 @@ public class UserController {
         } else {
             return ResponseEntity.status(401).build(); // Unauthorized
         }
+    }
+
+    @GetMapping("/all")
+    @Operation(summary = "Get all users", description = "Retrieves a list of all users")
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        List<UserDTO> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
     }
 }

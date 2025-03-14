@@ -9,7 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -66,5 +68,20 @@ public class UserServiceImpl implements UserService {
             }
         }
         return null; // Login failed
+    }
+
+    @Override
+    public List<UserDTO> getAllUsers() {
+        List<User> users = userRepo.findAll();
+        return users.stream().map(user -> new UserDTO(
+                user.getId(),
+                user.getUsername(),
+                user.getEmail(),
+                null,
+                user.getProfilePictureUrl(),
+                user.isOnlineStatus(),
+                user.getAbout(),
+                user.getLastSeen()
+        )).collect(Collectors.toList());
     }
 }
