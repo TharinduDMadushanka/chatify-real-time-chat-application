@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
+      const response = await axios.post('http://localhost:8080/api/v1/user/login', { email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/chat');
     } catch (error) {
