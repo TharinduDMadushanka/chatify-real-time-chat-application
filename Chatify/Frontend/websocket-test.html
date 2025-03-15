@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOMP WebSocket Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <h2>WebSocket Test</h2>
+    <button onclick="connect()">Connect</button>
+    <button onclick="sendMessage()">Send Message</button>
+    <div id="messages"></div>
+
+    <script>
+        let stompClient = null;
+
+        function connect() {
+            let socket = new WebSocket("http://localhost:8080/chat/websocket");
+            stompClient = Stomp.over(socket);
+
+            stompClient.connect({}, function (frame) {
+                console.log("Connected: " + frame);
+
+                // Subscribe to messages from the server
+                stompClient.subscribe("/topic/messages", function (message) {
+                    let response = JSON.parse(message.body);
+                    document.getElementById("messages").innerHTML += "<p>" + response.content + "</p>";
+                });
+            });
+        }
+
+        function sendMessage() {
+            let msg = { content: "Hello from STOMP.js!" };
+            stompClient.send("/app/sendMessage", {}, JSON.stringify(msg));
+        }
+    </script>
+</body>
+</html>
