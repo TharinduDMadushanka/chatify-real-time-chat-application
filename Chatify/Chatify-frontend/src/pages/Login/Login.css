@@ -1,0 +1,57 @@
+/* Global styles for the page */
+.login-wrapper {
+    height: 100vh;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Warm gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-form h2 {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .login-form .form-control {
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .login-form .form-control:focus {
+    border-color: #feb47b;
+    box-shadow: 0 0 5px rgba(254, 180, 123, 0.5);
+  }
+  
+  .login-form .btn {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #feb47b;
+    border: none;
+  }
+  
+  .login-form .btn:hover {
+    background-color: #ff7e5f;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .login-form .btn:focus {
+    box-shadow: 0 0 5px rgba(254, 180, 123, 0.5);
+  }
+  
+  /* Optional: Add a background image or color to the page */
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
