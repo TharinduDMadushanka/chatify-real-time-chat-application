@@ -1,0 +1,57 @@
+/* Global styles for the page */
+.register-wrapper {
+    height: 100vh;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-form {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .register-form h2 {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .register-form .form-control {
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .register-form .form-control:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  }
+  
+  .register-form .btn {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #2575fc;
+    border: none;
+  }
+  
+  .register-form .btn:hover {
+    background-color: #6a11cb;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .register-form .btn:focus {
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  }
+  
+  /* Optional: Add a background image or color to the page */
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
