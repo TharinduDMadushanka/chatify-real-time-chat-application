@@ -11,7 +11,7 @@ const ChatRoom = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const socket = new SockJS('/chat');
+    const socket = new SockJS('http://localhost:8080/chat'); // Ensure this matches your backend URL
     const client = Stomp.over(socket);
     setStompClient(client);
 
