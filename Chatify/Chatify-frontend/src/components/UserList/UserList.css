@@ -1,0 +1,125 @@
+.user-list-container {
+    width: 400px;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .user-list-header {
+    padding: 10px;
+  }
+  
+  .current-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 15px;
+    color: var(--text-color);
+  }
+  
+  .header-icons svg {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  
+  .header-icons svg:hover {
+    opacity: 1;
+  }
+  
+  .search-container {
+    padding: 10px;
+  }
+  
+  .search-input-wrapper {
+    background-color: #2a3942;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+  }
+  
+  .search-input-wrapper svg {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+  }
+  
+  .search-input-wrapper input {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    width: 100%;
+  }
+  
+  .search-input-wrapper input:focus {
+    outline: none;
+  }
+  
+  .search-input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .users-container {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .user-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .user-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .user-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .user-name-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .user-name-time h6 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  .user-name-time small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+  }
+  
+  .user-last-message {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
