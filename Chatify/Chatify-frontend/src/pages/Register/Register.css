@@ -22,13 +22,13 @@
 }
 
 .auth-header h1 {
-  color: var(--text-color);
+  color: white;
   margin-top: 1rem;
   font-size: 2rem;
 }
 
 .auth-logo {
-  color: var(--primary-color);
+  color: white;
 }
 
 .auth-form .form-control {
@@ -41,7 +41,7 @@
   background-color: #2a3942;
   border-color: var(--primary-color);
   box-shadow: none;
-  color: var(--text-color);
+  color: white;
 }
 
 .auth-form .form-control::placeholder {
@@ -49,14 +49,14 @@
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: #008f6f;
   border: none;
   padding: 12px;
   font-size: 1rem;
 }
 
 .btn-primary:hover {
-  background-color: #008f6f;
+  background-color: hsla(167, 100%, 28%, 0.725);
 }
 
 .auth-link {
