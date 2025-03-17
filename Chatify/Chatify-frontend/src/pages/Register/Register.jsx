@@ -30,50 +30,50 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <MessageCircle size={48} className="auth-logo" />
+    <div className="register-container">
+      <div className="register-card">
+        <div className="register-header">
+          <MessageCircle size={48} className="register-logo" />
           <h1>Create Account</h1>
         </div>
-        <form onSubmit={handleRegister} className="auth-form">
+        <form onSubmit={handleRegister} className="register-form">
           {error && <div className="alert alert-danger">{error}</div>}
-          <div className="form-group mb-3">
+          <div className="register-form-group">
             <input
               type="text"
-              className="form-control"
+              className="register-input"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
-          <div className="form-group mb-3">
+          <div className="register-form-group">
             <input
               type="email"
-              className="form-control"
+              className="register-input"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className="form-group mb-4">
+          <div className="register-form-group">
             <input
               type="password"
-              className="form-control"
+              className="register-input"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100 mb-3">
+          <button type="submit" className="register-button">
             Register
           </button>
         </form>
-        <p className="text-center text-white">
-          Already have an account? <Link to="/login" className="auth-link">Login</Link>
+        <p className="register-footer">
+          Already have an account? <Link to="/login" className="register-link">Login</Link>
         </p>
       </div>
     </div>
