@@ -28,6 +28,10 @@
   .logo-container {
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-out;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
   }
   
   .logo-circle {
@@ -38,6 +42,7 @@
     border-radius: 50%;
     padding: 3px;
     animation: pulse 2s infinite;
+    margin-top: 50px;
   }
   
   .logo-inner {
@@ -89,6 +94,8 @@
     border-radius: 20px !important;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    width: 700px;
+    margin-left: -200px;
   }
   
   .progress-bar {
@@ -102,7 +109,7 @@
   .progress-text {
     position: absolute;
     top: -25px;
-    right: 0;
+    right: 50%;
     color: #4facfe;
     font-size: 0.9rem;
     font-weight: 600;
