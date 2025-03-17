@@ -24,40 +24,40 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <MessageCircle size={48} className="auth-logo" />
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-header">
+          <MessageCircle size={48} className="login-logo" />
           <h1>Welcome to Chatify</h1>
         </div>
-        <form onSubmit={handleLogin} className="auth-form">
+        <form onSubmit={handleLogin} className="login-form">
           {error && <div className="alert alert-danger">{error}</div>}
-          <div className="form-group mb-3">
+          <div className="login-form-group">
             <input
               type="email"
-              className="form-control"
+              className="login-input"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className="form-group mb-4">
+          <div className="login-form-group">
             <input
               type="password"
-              className="form-control"
+              className="login-input"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100 mb-3">
+          <button type="submit" className="login-button">
             Login
           </button>
         </form>
-        <p className="text-center text-white">
-          Don't have an account? <Link to="/register" className="auth-link">Register</Link>
+        <p className="login-footer">
+          Don't have an account? <Link to="/register" className="login-link">Register</Link>
         </p>
       </div>
     </div>
