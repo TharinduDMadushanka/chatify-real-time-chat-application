@@ -1,14 +1,24 @@
-/* Register page uses the same styles as Login */
-.auth-container {
+:root {
+  --register-bg: #121212;
+  --register-card-bg: #1e1e1e;
+  --register-text-color: #e0e0e0;
+  --register-border-color: rgba(255, 255, 255, 0.1);
+  --register-hover-bg: rgba(255, 255, 255, 0.1);
+  --register-input-bg: #2a3942;
+  --register-input-placeholder: rgba(255, 255, 255, 0.5);
+  --register-primary: #00a884;
+}
+
+.register-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--chat-background);
+  background-color: var(--register-bg);
 }
 
-.auth-card {
-  background-color: var(--secondary-color);
+.register-card {
+  background-color: var(--register-card-bg);
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
@@ -16,55 +26,79 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.auth-header {
+.register-header {
   text-align: center;
   margin-bottom: 2rem;
+  background-color: transparent;
 }
 
-.auth-header h1 {
-  color: white;
+.register-header h1 {
+  color: var(--register-text-color);
   margin-top: 1rem;
   font-size: 2rem;
+  background-color: transparent;
 }
 
-.auth-logo {
+.register-logo {
+  color: var(--register-primary);
+  background-color: transparent;
+}
+
+.register-form{
+  background-color: transparent;
+}
+
+.register-form-group {
+  margin-bottom: 1rem;
+}
+
+.register-input {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--register-input-bg);
+  border: 1px solid var(--register-border-color);
+  color: var(--register-text-color);
+  border-radius: 5px;
+}
+
+.register-input:focus {
+  background-color: var(--register-input-bg);
+  border-color: var(--register-primary);
+  outline: none;
+}
+
+.register-input::placeholder {
+  color: var(--register-input-placeholder);
+}
+
+.register-button {
+  width: 100%;
+  background-color: var(--register-primary);
   color: white;
-}
-
-.auth-form .form-control {
-  background-color: #2a3942;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  /* color: var(--text-color); */
-  color: hsla(0, 0%, 100%, 0.784);
-}
-
-.auth-form .form-control:focus {
-  background-color: #2a3942;
-  border-color: var(--primary-color);
-  box-shadow: none;
-  color: white;
-}
-
-.auth-form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.btn-primary {
-  background-color: #008f6f;
   border: none;
   padding: 12px;
   font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
-  background-color: hsla(167, 100%, 28%, 0.725);
+.register-button:hover {
+  background-color: #008f6f;
 }
 
-.auth-link {
-  color: var(--primary-color);
+.register-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--register-text-color);
+  background-color: transparent;
+}
+
+.register-link {
+  color: var(--register-primary);
   text-decoration: none;
+  background-color: transparent;
 }
 
-.auth-link:hover {
+.register-link:hover {
   text-decoration: underline;
 }

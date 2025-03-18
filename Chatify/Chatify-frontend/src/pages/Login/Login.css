@@ -1,13 +1,24 @@
-.auth-container {
+:root {
+  --login-bg: #121212;
+  --login-card-bg: #1e1e1e;
+  --login-text-color: #e0e0e0;
+  --login-border-color: rgba(255, 255, 255, 0.1);
+  --login-hover-bg: rgba(255, 255, 255, 0.1);
+  --login-input-bg: #2a3942;
+  --login-input-placeholder: rgba(255, 255, 255, 0.5);
+  --login-primary: #00a884;
+}
+
+.login-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--chat-background);
+  background-color: var(--login-bg);
 }
 
-.auth-card {
-  background-color: var(--secondary-color);
+.login-card {
+  background-color: var(--login-card-bg);
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
@@ -15,54 +26,79 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.auth-header {
+.login-header {
   text-align: center;
   margin-bottom: 2rem;
+  background-color: transparent;
 }
 
-.auth-header h1 {
-  color: var(--text-color);
+.login-header h1 {
+  color: var(--login-text-color);
   margin-top: 1rem;
   font-size: 2rem;
+  background-color: transparent;
 }
 
-.auth-logo {
-  color: var(--primary-color);
+.login-logo {
+  color: var(--login-primary);
+  background-color: transparent;
 }
 
-.auth-form .form-control {
-  background-color: #2a3942;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-color);
+.login-form{
+  background-color: transparent;
 }
 
-.auth-form .form-control:focus {
-  background-color: #2a3942;
-  border-color: var(--primary-color);
-  box-shadow: none;
-  color: var(--text-color);
+.login-form-group {
+  margin-bottom: 1rem;
 }
 
-.auth-form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+.login-input {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--login-input-bg);
+  border: 1px solid var(--login-border-color);
+  color: var(--login-text-color);
+  border-radius: 5px;
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
+.login-input:focus {
+  background-color: var(--login-input-bg);
+  border-color: var(--login-primary);
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: var(--login-input-placeholder);
+}
+
+.login-button {
+  width: 100%;
+  background-color: var(--login-primary);
+  color: white;
   border: none;
   padding: 12px;
   font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
+.login-button:hover {
   background-color: #008f6f;
 }
 
-.auth-link {
-  color: var(--primary-color);
-  text-decoration: none;
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--login-text-color);
+  background-color: transparent;
 }
 
-.auth-link:hover {
+.login-link {
+  color: var(--login-primary);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.login-link:hover {
   text-decoration: underline;
 }
