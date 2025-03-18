@@ -18,7 +18,7 @@ const LandingPage = () => {
         }
         return prevProgress + 1;
       });
-    }, 150);
+    }, 100);
 
     return () => clearInterval(timer);
   }, [navigate]);

@@ -15,6 +15,10 @@
   position: relative;
 }
 
+.chat-box-container .text-center{
+  background-color: transparent;
+}
+
 .chat-header {
   display: flex;
   align-items: center;
