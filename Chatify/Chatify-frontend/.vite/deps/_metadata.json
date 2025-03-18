@@ -1,55 +1,8 @@
 {
-  "hash": "2f875636",
+  "hash": "7e2996d8",
   "configHash": "e9966eb4",
-  "lockfileHash": "5087630c",
-  "browserHash": "9caea176",
-  "optimized": {
-    "react": {
-      "src": "../../node_modules/react/index.js",
-      "file": "react.js",
-      "fileHash": "f8386776",
-      "needsInterop": true
-    },
-    "react-dom/client": {
-      "src": "../../node_modules/react-dom/client.js",
-      "file": "react-dom_client.js",
-      "fileHash": "e87d0de3",
-      "needsInterop": true
-    },
-    "react-router-dom": {
-      "src": "../../node_modules/react-router-dom/dist/index.mjs",
-      "file": "react-router-dom.js",
-      "fileHash": "7662cacd",
-      "needsInterop": false
-    },
-    "sockjs-client": {
-      "src": "../../node_modules/sockjs-client/lib/entry.js",
-      "file": "sockjs-client.js",
-      "fileHash": "44996444",
-      "needsInterop": true
-    },
-    "stompjs": {
-      "src": "../../node_modules/stompjs/index.js",
-      "file": "stompjs.js",
-      "fileHash": "1d5d7cc1",
-      "needsInterop": true
-    },
-    "axios": {
-      "src": "../../node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "0d22573d",
-      "needsInterop": false
-    }
-  },
-  "chunks": {
-    "chunk-UP6LQVYV": {
-      "file": "chunk-UP6LQVYV.js"
-    },
-    "chunk-TWJRYSII": {
-      "file": "chunk-TWJRYSII.js"
-    },
-    "chunk-DC5AMYBS": {
-      "file": "chunk-DC5AMYBS.js"
-    }
-  }
+  "lockfileHash": "e3b0c442",
+  "browserHash": "1e94e27a",
+  "optimized": {},
+  "chunks": {}
 }
